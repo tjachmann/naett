@@ -1075,7 +1075,7 @@ static LPWSTR winFromUTF8(const char* source) {
     }
 
 static LPWSTR wcsndup(LPCWSTR str, size_t len) {
-    LPWSTR result = calloc(1, sizeof(WCHAR) * (len + 1));
+    LPWSTR result = (LPWSTR)calloc(1, sizeof(WCHAR) * (len + 1));
     wcsncpy(result, str, len);
     return result;
 }
